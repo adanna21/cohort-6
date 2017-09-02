@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matrix Calculator</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Rubik:500" rel="stylesheet"> -->
+</head>
+
+<body>
+	<div id="parentdiv">
+		<div><input type="text" id="output" placeholder="0" readonly maxlength="7"></div>
+
+		<div id="calcbody">	
+
+			<div id="firstrow"> 
+			<!-- Below each button is += to output into the element output -->
+
+				<button id="del"value=" Del " onclick="output.value = ''">Del</button>
+				<button id="avg" onclick='average()'>Avg</button>
+				<button value=" / " onclick="output.value += '/'">÷</button>
+
+			</div>
+
+			<div class="rows">
+				<button value=" 7 " onclick="output.value += '7'">7</button>
+				<button value=" 8 " onclick="output.value += '8'">8</button>
+				<button value=" 9 " onclick="output.value += '9'">9</button>
+				<button value=" - " onclick="output.value += '-'">-</button>
+			</div>
+			
+			<div class="rows">
+				<button value=" 4 " onclick="output.value += '4'">4</button>
+				<button value=" 5 " onclick="output.value += '5'">5</button>
+				<button value=" 6 " onclick="output.value += '6'">6</button>
+				<button value=" * " onclick="output.value += '*'">x</button>
+			</div>
+			
+			<div class="rows">
+				<button value=" 1 " onclick="output.value += '1'">1</button>
+				<button value=" 2 " onclick="output.value += '2'" id="two">2</button>
+				<button value=" 3 " onclick="output.value += '3'" id="three">3</button>
+				<button value=" + " onclick="output.value += '+'">+</button>
+			</div>
+			<div class="rows">
+				<button id="zero" value=" 0 " onclick="output.value += '0'">0</button>
+				<button value=" . " onclick="output.value += '.'">.</button>
+				<button id="equals" value=" = " onclick="output.value = eval(output.value);change() ">=</button>
+			</div>
+			<button id="call" onclick="changeback()""></button>
+		</div>
+		
+	</div>
+
+	<script type="text/javascript">
+
+/*------------------------------Average Function-----------------------------*/
+		function average() {
+			let arr = new Array(); //create an empty array to store current output values
+			let newArr = new Array(); //create empty array to store split output value strings
+			let result = 0; //initialize results, using let for better calc 
+			console.log(arr);
+			arr = document.getElementById('output').value; //grab current contents of output
+			arr = arr.split('+'); //split output vales at the plus sign
+			console.log(arr);
+			for (let i=0;i<arr.length;i++) {
+				newArr[i] = parseInt(arr[i], 10); //loop through each string in array and place into newArr
+				result += newArr[i] // add every number in newArr and place in result var
+			}
+			result	= result / newArr.length; //div result number by newArr length to get average
+			document.getElementById('output').value = result; //log ansers into output screen for user
+			
+		}
+/*-------------------------------Change Background Function---------------------------------------------*/
+		function change() { //below specifies styles to change
+			document.body.style.background="url('matrix_giphy.webp')";
+			document.getElementById('parentdiv').style.backgroundSize="cover";
+			document.getElementById('parentdiv').style.backgroundRepeat="no-repeat";
+			document.getElementById('parentdiv').style.backgroundPosition="center";
+			document.getElementById('parentdiv').style.backgroundImage="url('steelphone.jpeg')";
+			document.getElementById('output').style.marginLeft="165px";
+			document.getElementById('calcbody').style.marginLeft="145px";
+			alert('The Operator: "Call me to escape The Matrix!"');
+			// window.setTimeout('changeback()', 6000);
+			change = !change; //stop function from running more than once
+		}
+		function changeback() { //putting empty apostraphies resets code to original styles
+			document.body.style.background=""; 
+			document.getElementById('parentdiv').style.backgroundSize="";
+			document.getElementById('parentdiv').style.backgroundRepeat="";
+			document.getElementById('parentdiv').style.backgroundPosition="";
+			document.getElementById('parentdiv').style.backgroundImage="";
+			document.getElementById('output').style.marginLeft="";
+			document.getElementById('calcbody').style.marginLeft="";
+			alert('The Operator: "Refresh browser and click "=" to enter The Matrix. Be careful!"');
+		}
+
+</script>
+
+	</body>
+</html>
