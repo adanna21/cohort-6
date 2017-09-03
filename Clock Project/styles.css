@@ -1,0 +1,101 @@
+@font-face{ 
+			font-family: 'Open 24 Display St';
+			src: url('Open 24 Display St.ttf') format('truetype');
+			   
+		}
+		body {
+			background-image: url("desk.jpg");
+			background-position: right center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+    		background-position: right bottom; 
+    		text-shadow: 3px 3px 12px #00f9ff;
+    		font-family: 'Open 24 Display St'; 
+    		color: #00f9ff;
+		}
+		p {
+			font-size: 25px;
+			opacity: 0.9;
+		}
+		#day {
+			margin-top: 10px;
+		}
+		#day, #date {
+			margin-left: 34px;
+			margin-bottom: 0px;
+		}
+		#parentdiv {
+			margin: 0 auto;
+			background-color: rgba(0, 0, 10, 0.7);
+			width: 500px;
+			height: 230px;
+			margin-top: 300px;
+			padding-top: 20px;
+		}
+		#bttnsAndTimes {
+			display: inline-flex;
+			margin-left: 30px;
+			margin-top: 0px;
+			text-align: center;
+		}
+		#clockface {
+			display: flex;
+			padding-right: 10px;
+		}
+		#displayTime {
+			color: #00f9ff;
+			font-size: 90px;
+		}
+		#am_pm {
+			color: #00f9ff;
+			font-size: 40px;
+		}
+		#music {
+			background: url("Playlist.png") no-repeat center;
+		}
+		#setalarmbuttons {
+			display: flex;
+			flex-direction: column;
+			border-left: 2px #00f9ff solid;
+
+		}
+		#hrMinTmDay {
+			display: inline-flex;
+			text-align: center;
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+		select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			width: 45px;
+			height: 30px;
+			margin: 0px 1px 5px 5px;
+			color: #00f9ff;
+			background: url("Sort Down.png") no-repeat 85% center;
+			font-size: 14px;
+			padding-left: 5px;
+			text-shadow: 0px 0px 8px #00f9ff;
+		}
+		#setResetBttn {
+			opacity: 1;
+			margin-left: 9px;
+			font-size: 10px;
+			margin-right: 9px;
+		}
+		button {
+			color: #00f9ff;
+			background: none;
+			text-shadow: 0px 1px 5px #00f9ff;
+			font-size: 16px;
+		}
+		#setAlarm {
+			text-align: center;
+			margin-left: 5px;
+			margin-top: 10px;
+		}
+		#date {
+			margin-top: 10px;
+		}
