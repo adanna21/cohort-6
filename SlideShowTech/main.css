@@ -1,0 +1,196 @@
+		body {
+			background-image: url("liliane-limpens-17371.jpg");
+			background-position: left center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed; /*makes image spread*/
+			transform-origin: 100%;
+			transform: skewX(-1.5deg);
+		}
+		#parentDiv {
+			/*background-color: rgba(0, 0, 0, 0.2);*/
+			margin: 0 auto;
+			padding-top: 50px;
+			width: 1500px;
+			height: 650px;
+			font-family: 'Roboto', sans-serif;
+		}
+		#navDiv {
+			width: 100px;
+			margin-top: 30px;
+			margin-left: 100px;
+			position: absolute;
+		}
+		#navDiv li :hover{
+			color: #86b585;
+		}
+		a {
+			width: 300px;
+			height: 300px;
+		}
+
+		ul {
+			list-style: none;	
+		}
+		#home, #info, #vids {
+			width: 50px;
+			height: 50px;
+			margin-bottom: 15px;
+			border-radius: 100%;	
+			text-align: right;
+		}
+		#home, #info, #vids: hover {
+			box-shadow: 0px 0px 5px #d2cddd;
+		}
+		#home {
+			background: url("");
+			background-color: rgba(0, 0, 0, 0.1);
+			box-shadow: 0px 0px 5px #2e2e2e;
+			background-size: 35px 35px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#info {
+			background: url("");
+			background-color: rgba(0, 0, 0, 0.1);
+			box-shadow: 0px 0px 5px #2e2e2e;
+			background-size: 35px 35px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#vids {
+			background: url("");
+			background-color: rgba(0, 0, 0, 0.1);
+			box-shadow: 0px 0px 5px #2e2e2e;
+			background-size: 35px 35px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#bodDiv {
+			width: 1100px;
+			border-radius: 2%;
+			background-color: rgba(0, 0, 0, 0.1);
+			margin-left: 250px;
+			padding-top: 1px;
+			padding-bottom: 1px;
+			color: #120f0f;
+		
+		}
+		#bodDiv #watch {
+			opacity: .7;
+			font-size: 25px;
+			font-weight: 300;
+			height: 40px;
+			text-decoration: none;
+			color: inherit;
+			position: relative;
+			top: 90px;
+			margin-left: 90px;
+			padding-left: 10px;
+			padding-top: 10px;
+		}
+		#bodDiv p {
+			opacity: .7;
+			font-size: 25px;
+			font-weight: 400;
+			color: #120f0f;
+			width: 400px;
+			height: 150px;
+			background: rgba(0, 0, 0, 0.1);
+			position: relative;
+			top: 90px;
+			margin-left: 90px;
+			padding-left: 10px;
+			padding-top: 10px;
+			
+		}
+		#bodDiv img {
+			opacity: .9;
+			margin-top: -200px;
+			margin-left: 540px;
+			margin-bottom: -25px;
+		}
+		h1, h2{
+			text-align: center;
+			font-weight: 300;
+		}
+		h1 {
+			font-size: 40px;
+			font-weight: 300;
+		}
+		h2 {
+			margin-bottom: 10px;
+			font-weight: 300;
+		}
+		table {
+			width: 1100px;
+			margin-left: 250px;
+			background-color: rgba(0,0,0,.2);
+			position: relative;
+			top: -40px;
+		}
+
+		/*MODAL*/
+		.modalDialog {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: rgba(0,0,0,0.8);
+			z-index: 99999;
+			opacity:0;
+			-webkit-transition: opacity 400ms ease-in;
+			-moz-transition: opacity 400ms ease-in;
+			transition: opacity 400ms ease-in;
+			pointer-events: none;
+			font-size: 30px;
+			text-align: center;
+			z-index: 1;
+			padding-top: 350px;
+		}
+		.modalDialog:target {
+			opacity:1;
+			pointer-events: auto;
+		}
+
+		.modalDialog > div {
+			width: 640px;
+			height: 360px;
+			position: relative;
+			/*margin: 10% auto;*/
+			padding: 5px 20px 13px 20px;
+			border-radius: 10px;
+			/*background: #fff;*/
+			margin: -200px 10% 10% 25%;
+		}
+		 #ytplayer{
+		 	width: 640px;
+		 	height: 360px;
+		 	position: relative;
+		 	margin-top: -100px ;
+		 	margin: 10% auto;
+		 	padding: 5px 20px 13px 20px;
+		 	border-radius: 10px;
+
+		 }
+		 .close {
+		 	background: #606061;
+		 	color: #FFFFFF;
+		 	line-height: 25px;
+		 	position: absolute;
+		 	right: -12px;
+		 	text-align: center;
+		 	top: -10px;
+		 	width: 24px;
+		 	text-decoration: none;
+		 	font-weight: bold;
+		 	-webkit-border-radius: 12px;
+		 	-moz-border-radius: 12px;
+		 	border-radius: 12px;
+		 	-moz-box-shadow: 1px 1px 3px #000;
+		 	-webkit-box-shadow: 1px 1px 3px #000;
+		 	box-shadow: 1px 1px 3px #000;
+		 }
+
+		

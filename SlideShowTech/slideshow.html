@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SlideShow</title>
+	<link rel = "stylesheet" type = "text/css" href = "secondary.css" />
+</head>
+
+<body>
+	<div id="parentDiv">
+		<div id="navDiv">
+			<ul>
+				<li id="home"><a href="index.html"><img src="home.png"></a></li>
+				<li id="info"><a href="info.html#expand1"><img src="details.png"></a></li>
+				<li id="vids"><a href="slideshow.html"><img src="photos.png"></a></li>
+			</ul>
+			
+		</div>
+		<div id="bodDiv">
+			<img class="images" src="graphicdesigner.jpg">
+			<img class="images" src="Hololens.jpg">
+			<img class="images" src="holoman.jpg">
+			<img class="images" src="musicman.jpg">
+			<img class="images" src="womangamer.jpg">
+			<button onclick="nextImg(-1)" id="previous" class="buttons"></button>
+			<button onclick="nextImg(1)" id="next" class="buttons"></button>
+		</div>
+	</div>
+<footer>
+	<table>
+		<tr>
+			<td>Follow Microsoft HoloLens</td>
+			<td><img src="vr.png"></td>
+			<td><img src="twitter.png"></td>
+			<td><img src="fb.png"></td>
+		</tr>
+	</table>
+</footer>
+<script type="text/javascript">
+	var index = 1;
+	function nextImg(x){
+		index = index + x; 
+		//whatever image index is add 1 as indicated at next button and vice versa for minus 1
+		currImage(index);
+		//call currImage with index + 1
+	}
+
+	currImage(1);
+	
+	function currImage(x){
+		var i;
+		var imgArr = document.getElementsByClassName('images');
+		if (x > imgArr.length) {index = 1}; 
+		//if user reaches end of images set it equal to 1 or first image
+		if(x < 1) {index = imgArr.length};
+		//if user is on first image and tries to click back place index as last image 
+		for (i = 0; i < imgArr.length; i++) {
+			imgArr[i].style.display = "none";
+		}
+		imgArr[index-1].style.display = "block"; 
+		//shows image that is at index - one
+	}
+
+	autoSlideShow();
+	function autoSlideShow(){
+		var i;
+		var imgArr = document.getElementsByClassName('images');
+		if (index > imgArr.length) {index = 1}; 
+		//if user reaches end of images set it equal to 1 or first image
+
+		for (i = 0; i < imgArr.length; i++) {
+			imgArr[i].style.display = "none";
+		}
+		imgArr[index-1].style.display = "block"; 
+		//shows image that is at index - one
+		index++; //continue to increaseindex by one
+		setTimeout(autoSlideShow, 5000); 
+		//run function (change image) every 5 seconds
+	}
+</script>
+
+</body>
+</html>
