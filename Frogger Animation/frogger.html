@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Frogger</title>
+	<style type="text/css">
+		#container {
+			background-image: url("water.jpg");
+			background-size: cover;
+			position: fixed;
+			width: 1500px;
+			height: 800px;
+		}
+		#truck {
+			position: absolute;
+			bottom: 105px;
+			left: 1100px;
+		}
+		#racecar {
+			position: absolute;
+			bottom: 260px;
+			left: 1400px;
+		}
+		#car {
+			position: absolute;
+			bottom: 120px;
+			left: 500px;
+		}
+		#car2 {
+			position: absolute;
+			bottom: 300px;
+			left: 900px;
+		}
+		#truck2 {
+			position: absolute;
+			bottom: 260px;
+			left: 1600px;
+		}
+		#frog {
+			position: absolute;
+			bottom: -40px;
+			left: 600px;
+		}
+		#log {
+			position: absolute;
+			top: 10px;
+			left: 900px;
+		}
+		#lilypad {
+			position: absolute;
+			top: 80px;
+			left: 600px;
+		}
+		#log2{
+			position: absolute;
+			top: 150px;
+			left: 100px;
+		}
+		#lilypad2 {
+			position: absolute;
+			top: 200px;
+			left: 1100px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<div id="truck"><img src="truck.png"></div>
+		<div id="car"><img src="redcar.png"></div>
+		<div id="car2"><img src="redcar.png"></div>
+		<div id="racecar"><img src="racecar.png"></div>
+		<div id="truck2"><img src="truck.png"></div>
+		<div id="frog"><img src="frog.png"></div>
+		<div id="log"><img src="log.png"></div>
+		<div id="lilypad"><img src="lilypad.png"></div>
+		<div id="log2"><img src="log.png"></div>
+		<div id="lilypad2"><img src="lilypad.png"></div>
+		<p><button onclick="go()">Play</button></p>
+		<p><button onclick="stop()">Reset</button></p>
+	</div>
+
+	<script type="text/javascript">
+
+
+		function go() {
+		//create new audio object
+			var music = new Audio("frogger-forever.mp3");
+			music.loop = true;
+			music.play();	
+
+		// get each element
+			var truck = document.getElementById("truck");
+			var car = document.getElementById("car");
+			var car2 = document.getElementById("car2");
+			var racecar = document.getElementById("racecar");
+			var frog = document.getElementById("frog");
+			var truck2 = document.getElementById("truck2");
+			var log = document.getElementById("log");
+			var lilypad = document.getElementById("lilypad");
+			var log2 = document.getElementById("log2");
+			var lilypad2 = document.getElementById("lilypad2");
+
+		//position each item
+			var truckPosition = 1100;
+			var carPosition = 500;
+			var car2Position = 900;
+			var racePosition = 1400;
+			var truck2Position = 1600;
+			var logPosition = 900;
+			var lilypadPosition = 600;
+			var log2Position = 100;
+			var lilypad2Position = 1100;
+			
+			var frogX = 600;
+			var frogY = -40;
+
+		//set function to repeat ever 5 miliseconds
+			var id = setInterval(frame, 5);
+
+		//Actual function
+			function frame(){
+			if(truck2Position == -100){   //when truck2 is off screen reset all other items
+				truckPosition = 1500;
+				carPosition = 1000;
+				car2Position = 1200;
+				racePosition = 900;
+				truck2Position = 1600;
+				logPosition = 1000;
+				lilypadPosition = 900;
+				log2Position = 1400;
+				lilypadPosition = 1100;
+				
+			}
+		
+			else {
+				truckPosition-=.5;  //decriment each item by entered numbers
+				carPosition-=.6;
+				car2Position-=.6;
+				racePosition-=.7
+				truck2Position-=.5;
+				logPosition -=.5 ;
+				lilypadPosition -= .4;
+				log2Position -= .6;
+				lilypad2Position -=.4;
+				
+				truck.style.left = truckPosition + "px"; //get element by id and add by getting px
+				car.style.left = carPosition + "px";
+				car2.style.left = car2Position + "px";
+				racecar.style.left = racePosition + "px";
+				truck2.style.left = truck2Position + "px";
+				log.style.left = logPosition + "px";
+				lilypad.style.left = lilypadPosition + "px";
+				log2.style.left = log2Position + "px";
+				lilypad2.style.left = lilypad2Position + "px";
+				}
+			}
+			document.onkeydown = function(moveFrog) {  //when arrow keys are pressed move as advised
+			    switch (moveFrog.keyCode) {
+			        case 37:
+			        	frogX -= 30;
+			        	frog.style.left = frogX + "px";  //left
+			            break;
+			        case 38:
+			        	frogY += 30;
+			        	frog.style.bottom = frogY + "px"; //up
+			            break;
+			        case 39: 
+			        	frogX += 30;
+			        	frog.style.left = frogX + "px";  //right
+			            break;
+			        case 40:
+			        	frogY -= 30;
+			        	frog.style.bottom = frogY + "px"; //down
+			            break;
+			    }
+			};
+		}
+	//Reload Page
+		function stop() {
+			window.location.reload(true);
+		}
+	</script>
+</body>
+</html>
